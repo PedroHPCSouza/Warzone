@@ -1,138 +1,138 @@
 @font-face {
-  font-family:ModernWarfare;
+  font-family: ModernWarfare;
   src: url(../assets/ModernWarfare-8MM6z.ttf);
 }
 
-*{
-    padding: 0;
-    margin:0 ;
-    
+@font-face {
+  font-family: ModernWarfare2;
+  src: url(../assets/Poster\ Gothic\ ATF\ Regular.otf);
 }
 
-body{
 
-    box-sizing: border-box;
-    background-color: #01172b;
+body {
+
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/639c8c167169443.64246bf6d538b.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-family: ModernWarfare;
+  box-sizing: border-box;
+  background-color: #000000;
 }
 
-.banner_animado {
 
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    align-items: center;
-    
-    
 
-}
+.video_ghost {
 
-.video_ghost{
-
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 
 }
 
 /* fim animação de fundo  */
 
 .login {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-    margin-left: 200px;
-    position: absolute;
-    font-family: ModernWarfare;
-  
-  }
-  
-  .card-cadastro {
-      text-align: center;
-      background-color: #7ec92e5e;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 10px 10px 10px #04253eb7;
-      width: 350px;
-      
-    }
-    
-    h2 {
-      text-align: center;
-      color: #000000;
-    }
-    
-    .formulario {
-      margin-top: 20px;
-    }
-    
-    .campo {
-      margin-bottom: 15px;
-      color: #000000;
-      font-size: 20px;
-      
-    }
-    
-    span {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    
-    input {
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-      border-radius: 5px;
-      background-color: #ffffffce;
-      font-size: bold;
-    }
-  
-    
-    .botao {
-      background-color: #ffffff;
-      color: #000000;
-      padding: 10px;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      width: 50%;
-      margin-top: 20px;
-      font-family: ModernWarfare;
-    }
-    
-    .botao:hover {
-      background-color: #71ff75;
-    }
-    
-    .loading-div {
-      display: none;
-      text-align: center;
-      margin-top: 20px;
-    }
-    
-    .alerta_erro{
-      display: flex;
-      justify-content: flex-end ;
-      width: 100%;
-    }
-  
-    .card_erro {
-      display: none;
-      background-color: #776a4cdc;
-      color: #000000;
-      padding: 10px;
-      border-radius: 10px;
-      border: solid;
-      border-color: black;
-      text-align: center;
-      margin-right: 140xpx;
-    }
-    
-    #div_erros_login {
-      margin-top: 20px;
-      text-align: center;
-      color: #776a4cdc;
-    }
-  
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  margin-left: 200px;
+  position: absolute;
+  font-family: ModernWarfare;
+
+}
+
+
+.card-cadastro {
+  text-align: center;
+  background-color: #75c42181;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px #ffffff1a;
+  width: 350px;
+
+}
+
+h2 {
+  text-align: center;
+  color: #000000;
+}
+
+.formulario {
+  margin-top: 20px;
+}
+
+.campo {
+  margin-bottom: 15px;
+  color: #000000;
+  font-family: ModernWarfare2;
+  font-size: 20px;
+
+}
+
+span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #ffffffce;
+  font-size: bold;
+}
+
+
+.botao {
+  background-color: #ffffffb2;
+  color: #000000;
+  padding: 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 50%;
+  margin-top: 20px;
+  font-family: ModernWarfare;
+}
+
+.botao:hover {
+  background-color: #b8a22f;
+}
+
+.loading-div {
+  display: flex;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.alerta_erro {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.card_erro {
+  display: flex;
+  background-color: #776a4cdc;
+  color: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid;
+  border-color: black;
+  text-align: center;
+  margin-right: 140xpx;
+}
+
+#div_erros_login {
+  margin-top: 20px;
+  text-align: center;
+  color: #776a4cdc;
+}

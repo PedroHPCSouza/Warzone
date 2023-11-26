@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="./css/cadastro.css">
     <title>Cadasto</title>
     <script src="./js/sessao.js"></script>
+    <link rel="shortcut icon" type="imagex/png" href="../public/assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png">
+
     <link rel="canonical" href="https://player.vimeo.com/video/792579318">
 
 </head>
+
 
 <body>
 
@@ -17,13 +20,6 @@
 <main>
 
 
-<div class="banner_animado">
-
-    <video class="video_ghost" autoplay muted loop >
-        <source src="./assets/ghost_cadastro.mp4">
-    </video>
-
-</div>
 
 <div class="login">
     <div class="container">
@@ -48,7 +44,7 @@
             <span>Confirmar da Senha:</span>
             <input id="confirmacao_senha_input" type="password" />
           </div>
-          <button class="botao" onclick="cadastrar()">Alistar-se</button>
+          <button class="botao" onclick="cadastrar()">cadastrar</button>
         </div>
     
 
@@ -79,6 +75,9 @@ function cadastrar() {
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
+
+
+
     if (
       nomeVar == "" ||
       emailVar == "" ||
@@ -95,6 +94,64 @@ function cadastrar() {
     } else {
       setInterval(sumirMensagem, 5000);
     }
+
+        // validacao EMAIL
+
+        if (!(email.indexOf("@") >= 1)) {
+          div_mensagem.style.display = "block";
+      mensagem_erro.innerHTML += `-Deve conter @ no email<br>`;
+      validacao = 1
+    }
+    if (!(email.indexOf(".com") >= 1)) {
+      mensagem_erro.innerHTML += `-Deve conter .com no email <br>`;
+      div_mensagem.style.display = "block";
+      validacao = 1
+    }
+    if (email.indexOf(" ") >= 0) {
+      mensagem_erro.innerHTML += `-Não pode conter espaços na email <br>`;
+      div_mensagem.style.display = "block";
+      validacao = 1
+    }
+
+    //Fim validacao EMAIL
+
+    // VALIDACAO SENHA
+
+
+    if (senhaVar != confirmacaoSenhaVar) {
+      mensagem_erro.innerHTML += `Senhas incompatíveis`;
+      validacao = 1
+    }
+
+        if (Senha.length < 8) {
+      mensagem_erro.innerHTML += `-A senha deve possuir no mínimo 8 caracteres <br>`;
+      div_mensagem.style.display = "block";
+      validacao = 1
+    }
+
+    if (Senha.indexOf(" ") >= 0) {
+      mensagem_erro.innerHTML += `-Não pode conter espaços na senha <br>`;
+      div_mensagem.style.display = "block";
+      validacao = 1
+    }
+
+    if (
+      !(Senha.indexOf("#") >= 1 ||
+        Senha.indexOf("@") >= 1 ||
+        Senha.indexOf("!") >= 1 ||
+        Senha.indexOf("%") >= 1 ||
+        Senha.indexOf("*") >= 1 ||
+        Senha.indexOf("$") >= 1 ||
+        Senha.indexOf("_") >= 1 ||
+        Senha.indexOf("-") >= 1 ||
+        Senha.indexOf("&") >= 1)
+    ) {
+      mensagem_erro.innerHTML += `-A senha deve possuir no mínimo 1 caracter especial <br>`;
+      div_mensagem.style.display = "block";
+      validacao = 1
+    }
+
+    // FIM VALIDACAO SENHA
 
     fetch("/usuarios/cadastrar", {
       method: "POST",

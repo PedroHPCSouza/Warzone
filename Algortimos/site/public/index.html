@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="../public/assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <title>Home</title>
+</head>
+
+<body>
+
+
+    <header>
+        <h1><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
+        <nav>
+            <ul class="ul_navbar">
+
+                <li>
+                    <a href="/site/public/sobre.html" class="li_nav">sobre</a>
+                </li>
+     
+        
+                <li>
+                    <a class="li_nav" onclick="aparecerLogin()">login</a>
+                </li>
+     
+            </ul>
+        </nav>
+
+        <div class="cadbar" id="cadbar">
+            <div class="cadbarInput">
+                <span>E-Mail</span>
+                <input type="text" class="inpsbege" id="email_input">
+            </div>
+
+            <div class="cadbarInput">
+                <span>Senha</span>
+                <input type="password" class="inpsbege" id="senha_input">
+
+            </div>
+            <button onclick="entrar()"><B>ENTRAR</B></button>
+
+            <div id="div_erros_login"></div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <p class="p_welcome">Bem-vindo ao meu blog</p>
+        <div class="card_welcome">
+        
+            <p class="p_mensagem" >Estamos empolgados em dar as boas-vindas ao nosso blog dedicado ao universo emocionante de Call of Duty! Se você é um apaixonado por batalhas intensas, estratégias afiadas e confrontos multijogador online, você está prestes a mergulhar em um conteúdo que vai elevar sua experiência de jogo.</p> 
+
+            <button onclick="cadastrar()" class="botao_cadastro" >Cadastre-se</button>
+
+        </div>
+
+    </div>
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+    </div>
+    </main>
+
+
+</body>
+
+</html>
+
+<script>
+
+
+function entrar() {
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = " Campos em branco ! ";
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        console.log("In fetch");
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+
+            }),
+        })
+            .then((resposta) => {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+
+                        setTimeout(function () {
+                            window.location = "./indexlogada.html";
+                        }, 1000);
+
+                    });
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+function cadastrar(){
+
+window.location = "cadastro.html"
+
+}
+
+function aparecerLogin() {
+
+var disP = cadbar.style.display
+
+if (disP == `flex`) {
+    cadbar.style.display = "none"
+}
+else {
+    cadbar.style.display = "flex"
+}
+
+}
+
+</script>
