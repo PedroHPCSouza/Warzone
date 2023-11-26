@@ -28,7 +28,7 @@
                 </li>
 
                 <li>
-                    <a onclick="sair()" class="li_nav">Sair</a>
+                    <a onclick="perfil()" class="li_nav">Perfil</a>
                 </li>
 
 
@@ -39,7 +39,7 @@
 
     <main>
 
-        <p class="p_welcome_logada">Bem vindo de volta <span id="nome_user"></span> !</p>
+        <p class="p_welcome_logada">Olá, <span id="nome_user"></span> !</p>
 
        <div class="mensagem"> <p class="p_welcome_exp">Explore nossa página para visualizar as principais armas e operadores de Call of Duty Warzone. Utilize nossa pesquisa e compartilhe suas preferências de armamento, operador e mapa. Sua escolha define seu caminho em Verdansk. Participe agora!</p>
        </div>
@@ -71,9 +71,9 @@ nome_user.innerHTML = sessionStorage.getItem("NOME_USUARIO")
     }
 
 
-    function sair() {
+    function perfil() {
 
-        window.location = "index.html"
+        window.location = "perfil.html"
 
     }
 

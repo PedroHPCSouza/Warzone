@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/perfil.css">
+    <link rel="shortcut icon" type="imagex/png"
+        href="../public/assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png">
+
+    <title>Perfil</title>
+</head>
+
+<body>
+
+    <header>
+        <h1><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
+        <nav>
+            <ul class="ul_navbar">
+
+                <li>
+                    <a onclick="home()" class="li_nav">Home</a>
+                </li>
+
+
+                <li>
+                    <a onclick="jogar()" class="li_nav">Sobre</a>
+                </li>
+
+
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="div_perfil">
+
+            <img src="./assets/Foto_de_perfil_call_of_duty-removebg-preview.png" width="250px" alt="">
+
+            <br><br><br>
+
+            <p>Nome</p>
+
+        
+            <span id="UserName" class="span_perfil">CCEEEEEEEEEEEEEEEEE</span>
+            <br><br><br>
+
+            <p>Email</p>
+            <span id="UserEmail">CEEEEEEEEEEEEEEEEEE</span>
+
+            <br><br><br>
+
+            <button onclick="sair()">Sair</button>
+
+
+        </div>
+
+
+
+    </main>
+
+
+
+
+</body>
+
+</html>
+<script>
+
+    UserName.innerHTML = sessionStorage.getItem("NOME_USUARIO")
+
+    UserEmail.innerHTML = sessionStorage.getItem("EMAIL_USUARIO")
+
+    function home() {
+
+        window.location = "index_log.html"
+
+    }
+
+
+    function sair() {
+
+        window.location = "index.html"
+
+    }
+
+
+
+
+
+</script>
