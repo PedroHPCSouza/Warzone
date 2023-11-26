@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index_log.css">
+    <link rel="shortcut icon" type="imagex/png"
+        href="../public/assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png">
+
+    <title>Home</title>
+</head>
+
+<body>
+
+    <header>
+        <h1><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
+        <nav>
+            <ul class="ul_navbar">
+
+                <li>
+                    <a onclick="jogar()" class="li_nav">Lorem</a>
+                </li>
+
+
+                <li>
+                    <a onclick="jogar()" class="li_nav">Sobre</a>
+                </li>
+
+                <li>
+                    <a onclick="sair()" class="li_nav">Sair</a>
+                </li>
+
+
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <p class="p_welcome_logada">Bem vindo de volta <span id="nome_user"></span> !</p>
+
+       <div class="mensagem"> <p class="p_welcome_exp">Explore nossa página para visualizar as principais armas e operadores de Call of Duty Warzone. Utilize nossa pesquisa e compartilhe suas preferências de armamento, operador e mapa. Sua escolha define seu caminho em Verdansk. Participe agora!</p>
+       </div>
+        <div class="container_cards">
+
+            <div class="card_armas button">Armas</div>
+            <div class="card_operador button"  >Operadores</div>
+            <div class="card_pesquisa button">Pesquisa</div>
+
+        </div>
+
+    </main>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+
+nome_user.innerHTML = sessionStorage.getItem("NOME_USUARIO")
+
+    function jogar() {
+
+        window.location = "sobre.html"
+
+    }
+
+
+    function sair() {
+
+        window.location = "index.html"
+
+    }
+
+
+
+
+</script>

@@ -12,12 +12,13 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../assets/peakpx.jpg');
+    background-image: url('../assets/cropped-1920-1080-1245275.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     color: #fff;
     font-family: ModernWarfare;
+    text-align: center;
 }
 
 
@@ -41,7 +42,7 @@ header {
     display: flex;
     flex-direction: row;
     list-style: none;
-    margin-left: 700px;
+    margin-left: 885px;
 
 }
 
@@ -73,6 +74,7 @@ nav li a:hover {
     font-size: 30px;
     top: 10;
     margin-left: 20px;
+    margin-top: 70px;
 
 }
 
@@ -83,6 +85,8 @@ nav li a:hover {
     background-color: #b8a12f00;
     line-height: 40px;
     text-align: center;
+    margin-left: 460px;
+    margin-top: 90px;
 
 }
 
