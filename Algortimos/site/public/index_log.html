@@ -51,7 +51,7 @@
 
                 <br>
 
-                <textarea name="" id="" cols="30" rows="10" class="input_pesquisa" id="input_pesquisa" placeholder="Sua opinião é crucial para nós, e cada sugestão contribui para tornar o nosso site mais adaptado às suas necessidades e expectativas."></textarea>
+                <textarea name="" id="input_sugestao" cols="30" rows="10" class="input_pesquisa" placeholder="Sua opinião é crucial para nós, e cada sugestão contribui para tornar o nosso site mais adaptado às suas necessidades e expectativas."></textarea>
 
                 <br><br>
 
@@ -70,8 +70,8 @@
             <spam class="p_welcome_logada">Olá <span id="nome_user"></span> !</spam>
 
             <p class="p_welcome_exp">Explore nossa página para visualizar as principais armas e operadores de Call of
-                Duty Warzone. Utilize nossa pesquisa e compartilhe suas preferências de armamento, operador e mapa. Sua
-                escolha define seu caminho em Verdansk. Participe agora!</p>
+                Duty Warzone. Utilize nossa pesquisa e compartilhe uma sugestão de melhora para nosso blog ! . Sua
+                escolha define seu caminho em Verdansk Bom combate !</p>
         </div>
 
         <div class="container_cards" id="div_cards">
@@ -107,7 +107,25 @@
         div_mensagem.style.display = "none"
 
     }
+    
+    function EnviarPesquisa () {
 
+        var nome = input_nome.value
+        var sugestao = input_sugestao.value
+
+        if( nome == '' && sugestao =='' ){
+
+            alert("Campos vazios")
+
+            SairPesquisa()
+
+        }else {
+
+            
+
+        }
+
+    }
 
     function SairPesquisa() {
 
