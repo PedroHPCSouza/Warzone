@@ -12,7 +12,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image:  url('../assets/cropped-1920-1080-1245270.jpg');
+    background-image: url('../assets/cropped-1920-1080-1018513.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@ body {
 
 header {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.7) ;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 15px;
     position: fixed;
     width: 100%;
@@ -86,38 +86,49 @@ main {
 
 }
 
-.p_welcome_logada {
-
-    font-family: ModernWarfare2;
-    font-size: 35px;
-    margin-top: 40px;
-    color: #000000;
-    border: 10px;
-    padding-right: 10px;
-
-}
-
 .mensagem {
 
     width: 29%;
-    height: 400px;
-    color: #b8a12f;
+    height: 450px;
+    color: #9ad731;
     text-shadow: 1px 0 #000000, -1px 0 #000000, 0 1px #000000, 0 -1px #000000,
-               1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
+        1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;
     font-size: 25px;
     text-align: center;
-    line-height: 40px ;
-    font-family: ModernWarfare2 ;
+    line-height: 40px;
+    font-family: ModernWarfare2;
+    background-color: #0000008a;
+    box-shadow: #000000 10px 10px;
+    border-radius: 5px;
+    margin-top: 120px;
+
 }
+
+.p_welcome_logada {
+
+    margin-right: 300px;
+    color: #b8a12f;
+
+
+}
+
+.p_welcome_exp {
+
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
 
 .container_cards {
 
     width: 400px;
     height: 500px;
     background-color: #b8a12f00;
-    margin-top: -350px;
+    margin-top: -500px;
     margin-left: 1090px;
-    
+
 }
 
 .button {
@@ -157,4 +168,86 @@ main {
 
     background-image: url(../assets/cropped-1920-1080-1325502.jpg);
     background-size: cover;
+}
+
+/* INICIO PERQUISA */
+
+
+
+.div_pesquisa {
+
+    display: flex;
+    width: 50%;
+    height: 60%;
+    margin-left: 370px;
+    margin-top: 100px;
+    background-color: #b8a12ff1;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.863);
+
+}
+
+.inputNome{
+
+    width: 30%;
+    height: 10%;
+    margin-right: 60%;
+    border-radius: 10px;
+}
+
+.input_pesquisa {
+
+    width: 90%;
+    height: 150px;
+    border-radius: 10px;
+
+
+}
+
+.spam_pesquisa {
+
+    color: #000000;
+
+}
+
+
+
+.container_button {
+
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+   
+
+}
+
+
+
+.button_sair {
+
+    align-self: center;
+    width: 45%;
+    height: 45px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    background-color: #b8a12f3a;
+    font-family: ModernWarfare;
+
+}
+
+.button_sair:hover {
+
+    background-color: #b8a12f;
+
+
 }

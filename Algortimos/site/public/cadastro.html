@@ -2,96 +2,89 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/cadastro.css">
-    <title>Cadasto</title>
-    <script src="./js/sessao.js"></script>
-    <link rel="shortcut icon" type="imagex/png" href="../public/assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/cadastro.css">
+  <title>Cadasto</title>
+  <script src="./js/sessao.js"></script>
+  <link rel="shortcut icon" type="imagex/png" href="../public/assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png">
 
-    <link rel="canonical" href="https://player.vimeo.com/video/792579318">
+  <link rel="canonical" href="https://player.vimeo.com/video/792579318">
 
 </head>
 
 <body>
 
-  
+
   <header>
     <h1><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
     <nav>
-        <ul class="ul_navbar">
-
-            <li>
-                <a onclick="jogar()" class="li_nav">Lorem</a>
-            </li>
-
-
-            <li>
-                <a onclick="jogar()" class="li_nav">Sobre</a>
-            </li>
-
-            <li>
-                <a onclick="perfil()" class="li_nav">Perfil</a>
-            </li>
-
-
-
-        </ul>
+      <ul class="ul_navbar">
+        <li>
+          <a onclick="home()" class="li_nav">Perfil</a>
+        </li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<main>
+  <main>
 
 
 
-<div class="login">
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2> cadastre se </h2>
-        <div class="formulario">
- 
-          
-          <div class="campo">
-            <span>Nome:</span>
-            <input id="nome_input" type="text"  />
+    <div class="login">
+      <div class="container">
+        <div class="card card-cadastro">
+          <h2> cadastre se </h2>
+          <div class="formulario">
+
+
+            <div class="campo">
+              <span>Nome:</span>
+              <input id="nome_input" type="text" />
+            </div>
+            <div class="campo">
+              <span>E-mail:</span>
+              <input id="email_input" type="text" />
+            </div>
+            <div class="campo">
+              <span>Senha:</span>
+              <input id="senha_input" type="password" />
+            </div>
+            <div class="campo">
+              <span>Confirmar da Senha:</span>
+              <input id="confirmacao_senha_input" type="password" />
+            </div>
+            <button class="botao" onclick="cadastrar()">cadastrar</button>
           </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text"  />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" />
-          </div>
-          <div class="campo">
-            <span>Confirmar da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" />
-          </div>
-          <button class="botao" onclick="cadastrar()">cadastrar</button>
+
+
+          <div id="div_erros_login"></div>
         </div>
-    
-
-        <div id="div_erros_login"></div>
       </div>
-    </div>
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
+      <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+          <span id="mensagem_erro"></span>
+        </div>
       </div>
-    </div>
 
 
 
 
-</main>
+  </main>
 
 
 </body>
+
 </html>
 
 <script>
 
-function cadastrar() {
+  function home(){
+
+    window.location = "index.html"
+  }
+
+  function cadastrar() {
     aguardar();
 
     var nomeVar = nome_input.value;
@@ -105,8 +98,8 @@ function cadastrar() {
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" 
-     
+      confirmacaoSenhaVar == ""
+
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -118,10 +111,10 @@ function cadastrar() {
       setInterval(sumirMensagem, 5000);
     }
 
-        // validacao EMAIL
+    // validacao EMAIL
 
-        if (!(email.indexOf("@") >= 1)) {
-          div_mensagem.style.display = "block";
+    if (!(email.indexOf("@") >= 1)) {
+      div_mensagem.style.display = "block";
       mensagem_erro.innerHTML += `-Deve conter @ no email<br>`;
       validacao = 1
     }
@@ -146,7 +139,7 @@ function cadastrar() {
       validacao = 1
     }
 
-        if (Senha.length < 8) {
+    if (Senha.length < 8) {
       mensagem_erro.innerHTML += `-A senha deve possuir no mínimo 8 caracteres <br>`;
       div_mensagem.style.display = "block";
       validacao = 1
@@ -185,7 +178,7 @@ function cadastrar() {
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-       
+
       }),
     })
       .then(function (resposta) {

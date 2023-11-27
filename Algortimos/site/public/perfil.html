@@ -23,12 +23,6 @@
                 </li>
 
 
-                <li>
-                    <a onclick="jogar()" class="li_nav">Sobre</a>
-                </li>
-
-
-
             </ul>
         </nav>
     </header>
@@ -43,12 +37,12 @@
 
             <p>Nome</p>
 
-        
-            <span id="UserName" class="span_perfil">CCEEEEEEEEEEEEEEEEE</span>
-            <br><br><br>
+
+            <span id="UserName" class="span_perfil"></span>
+            <br><br>
 
             <p>Email</p>
-            <span id="UserEmail">CEEEEEEEEEEEEEEEEEE</span>
+            <span id="UserEmail" class="span_perfil"></span>
 
             <br><br><br>
 
@@ -69,24 +63,29 @@
 </html>
 <script>
 
-    UserName.innerHTML = sessionStorage.getItem("NOME_USUARIO")
 
-    UserEmail.innerHTML = sessionStorage.getItem("EMAIL_USUARIO")
 
     function home() {
+
 
         window.location = "index_log.html"
 
     }
 
 
+
     function sair() {
+
+        sessionStorage.clear();
 
         window.location = "index.html"
 
     }
 
 
+    UserName.innerHTML = sessionStorage.getItem("NOME_USUARIO")
+
+    UserEmail.innerHTML = sessionStorage.getItem("EMAIL_USUARIO")
 
 
 

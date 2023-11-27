@@ -39,15 +39,46 @@
 
     <main>
 
-        <p class="p_welcome_logada">Olá, <span id="nome_user"></span> !</p>
+        <div class="container_Pesquisa">
 
-       <div class="mensagem"> <p class="p_welcome_exp">Explore nossa página para visualizar as principais armas e operadores de Call of Duty Warzone. Utilize nossa pesquisa e compartilhe suas preferências de armamento, operador e mapa. Sua escolha define seu caminho em Verdansk. Participe agora!</p>
-       </div>
-        <div class="container_cards">
+            <div class="div_pesquisa" id="DivPesquisa">
 
-            <div class="card_armas button">Armas</div>
-            <div class="card_operador button"  >Operadores</div>
-            <div class="card_pesquisa button">Pesquisa</div>
+                <span class="spam_pesquisa" spam_pesquisa> Em que podemos melhorar  </span>
+
+                <br><BR></BR>
+
+                <input type="text" id="input_nome" class="inputNome" placeholder="Seu nome ">
+
+                <br>
+
+                <textarea name="" id="" cols="30" rows="10" class="input_pesquisa" id="input_pesquisa" placeholder="Sua opinião é crucial para nós, e cada sugestão contribui para tornar o nosso site mais adaptado às suas necessidades e expectativas."></textarea>
+
+                <br><br>
+
+                <div class="container_button">
+
+                <button onclick="SairPesquisa()" class="button_sair">Sair</button>
+                <button onclick="EnviarPesquisa()" class="button_sair">Enviar</button>
+
+            </div>
+
+            </div>
+        </div>
+
+        <div class="mensagem" id="div_mensagem">
+
+            <spam class="p_welcome_logada">Olá <span id="nome_user"></span> !</spam>
+
+            <p class="p_welcome_exp">Explore nossa página para visualizar as principais armas e operadores de Call of
+                Duty Warzone. Utilize nossa pesquisa e compartilhe suas preferências de armamento, operador e mapa. Sua
+                escolha define seu caminho em Verdansk. Participe agora!</p>
+        </div>
+
+        <div class="container_cards" id="div_cards">
+
+            <div onclick="armas()" class="card_armas button">Armas</div>
+            <div onclick="operador()" class="card_operador button">Operadores</div>
+            <div onclick="pesquisa()" class="card_pesquisa button">Pesquisa</div>
 
         </div>
 
@@ -62,7 +93,41 @@
 
 <script>
 
-nome_user.innerHTML = sessionStorage.getItem("NOME_USUARIO")
+    nome_user.innerHTML = sessionStorage.getItem("NOME_USUARIO")
+
+
+
+
+    function pesquisa() {
+
+        DivPesquisa.style.display = "flex"
+
+        div_cards.style.display = "none"
+
+        div_mensagem.style.display = "none"
+
+    }
+
+
+    function SairPesquisa() {
+
+        DivPesquisa.style.display = "none"
+
+        div_cards.style.display = "block"
+
+        div_mensagem.style.display = "block"
+
+    }
+
+    function operador() {
+
+        window.location = "operador.html"
+    }
+
+    function armas() {
+
+        window.location = "armas.html"
+    }
 
     function jogar() {
 
