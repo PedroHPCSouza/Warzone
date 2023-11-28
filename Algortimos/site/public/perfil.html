@@ -14,7 +14,7 @@
 <body>
 
     <header>
-        <h1><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
+        <h1 onclick="home()"><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 0px"></h1>
         <nav>
             <ul class="ul_navbar">
 
@@ -31,15 +31,24 @@
 
         <div class="div_perfil">
 
+            <!-- <label class="picture" tabindex="0">
+
+                <input type="file" accept="img/*" class="pictute_input">
+
+                <span class="pictute__img"></span> -->
+
+            </Label>
+
             <img src="./assets/Foto_de_perfil_call_of_duty-removebg-preview.png" width="250px" alt="">
 
             <br><br><br>
 
-            <p>Nome</p>
+            <p>NickName</p>
 
 
-            <span id="UserName" class="span_perfil"></span>
+            <span id="NickName" class="span_perfil"></span>
             <br><br>
+           
 
             <p>Email</p>
             <span id="UserEmail" class="span_perfil"></span>
@@ -83,7 +92,7 @@
     }
 
 
-    UserName.innerHTML = sessionStorage.getItem("NOME_USUARIO")
+    NickName.innerHTML = sessionStorage.getItem("NOME_USUARIO")
 
     UserEmail.innerHTML = sessionStorage.getItem("EMAIL_USUARIO")
 

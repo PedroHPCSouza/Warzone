@@ -12,7 +12,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../assets/b277af25934835.568b625a6c73b.jpg');
+    background-image: url('../assets/modern-warfare-2_kdmj.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
@@ -35,6 +35,12 @@ header {
 
 }
 
+header h1{
+
+    cursor: pointer;
+  
+  }
+  
 
 .ul_navbar {
 
@@ -62,7 +68,7 @@ nav {
 
 nav li a:hover {
 
-    background-color: #b8a12fcc;
+    background-color: #9ad731;
     color: black;
 
 }
@@ -120,3 +126,143 @@ nav a {
     font-size: 20px;
 }
 
+
+/* FIM NAV BAR */
+
+.container_armas {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    height: 700px;
+    background-color: #b8a12f00;
+    margin-top: 40px;
+    margin-left: 14px;
+    position: absolute;
+
+}
+
+.card_armas {
+    display: flex;
+    width: 450px;
+    height: 250px;
+    background-color: #1e1e1d;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 10px;
+
+
+}
+
+.card_armas:hover {
+
+    border: 10px;
+    border: #9ad731 solid;
+    box-shadow: 5px 5px 5px #9ad731;
+
+}
+
+
+.div_up {
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    width: 100%;
+    height: 35%;
+
+}
+
+.div_down {
+
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    width: 100%;
+    height: 40%;
+
+
+}
+
+.arma_1 {
+
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 183047.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #222222;
+
+
+}
+
+.arma_2 {
+
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 183007.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #202020;
+
+
+}
+
+.arma_3 {
+
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 183117.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #232423;
+
+
+}
+
+.arma_4 {
+
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 183327.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.arma_5 {
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 183715.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #202020;
+
+
+}
+
+.arma_6 {
+
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 183859.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.span_armas {
+
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+
+.button_armas {
+
+
+    background-color: #f94f009e;
+    color: #000000;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 20%;
+    margin-top: 20px;
+    font-family: ModernWarfare;
+}
+
+.button_armas:hover {
+    background-color: #f95000;
+}

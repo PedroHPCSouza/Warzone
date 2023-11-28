@@ -22,6 +22,7 @@ body {
   box-sizing: border-box;
   background-color: #000000;
 }
+
 header {
   display: flex;
   background-color: rgba(0, 0, 0, 0.7) ;
@@ -33,8 +34,14 @@ header {
   text-align: center;
   align-items: center;
 
+
 }
 
+header h1{
+
+  cursor: pointer;
+
+}
 
 .ul_navbar {
 
@@ -62,7 +69,7 @@ nav {
 
 nav li a:hover {
 
-  background-color: #b8a12fcc;
+  background-color: #9ad731;
   color: black;
 
 }
@@ -94,10 +101,12 @@ nav a {
   justify-content: left;
   align-items: center;
   text-align: center;
-  height: 100vh;
+  height: 300px;
   margin-left: 200px;
   position: absolute;
+  margin-top: 250px;
   font-family: ModernWarfare;
+  position: absolute;
 
 }
 
@@ -146,7 +155,7 @@ input {
 
 
 .botao {
-  background-color: #ffffffb2;
+  background-color: #b8a12fb5;;
   color: #000000;
   padding: 10px;
   border: none;
@@ -171,22 +180,24 @@ input {
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  margin-top: 400px;
 }
 
 .card_erro {
-  display: flex;
-  background-color: #776a4cdc;
+  display: none;
+  background-color: #75c42181;
   color: #000000;
   padding: 10px;
   border-radius: 10px;
   border: solid;
   border-color: black;
   text-align: center;
-  margin-right: 140xpx;
+  margin-left: 200px;
+  margin-top: 400px;
 }
 
-#div_erros_login {
+.card_erro{
   margin-top: 20px;
   text-align: center;
-  color: #776a4cdc;
+  color: black;
 }

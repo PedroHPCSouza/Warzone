@@ -1,0 +1,198 @@
+@font-face {
+    font-family: ModernWarfare;
+    src: url(../assets/ModernWarfare-8MM6z.ttf);
+}
+
+@font-face {
+    font-family: ModernWarfare2;
+    src: url(../assets/Poster\ Gothic\ ATF\ Regular.otf);
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:#212221;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-family: ModernWarfare;
+}
+
+
+
+header {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    height: 8%;
+    z-index: 1000;
+    text-align: center;
+    align-items: center;
+
+}
+
+header h1{
+
+    cursor: pointer;
+  
+  }
+  
+
+
+.ul_navbar {
+
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-left: 1000px;
+
+}
+
+.li_nav {
+
+    cursor: pointer;
+
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+
+
+}
+
+nav li a:hover {
+
+    background-color: #9ad731;
+    color: black;
+    
+    
+}
+
+.p_welcome {
+    
+    color: #ffffff;
+    font-size: 30px;
+    top: 10;
+    margin-left: 20px;
+    
+}
+
+.card_welcome {
+    
+    width: 580px;
+    height: 600px;
+    background-color: #b8a12f00;
+    line-height: 40px;
+    text-align: center;
+    
+}
+
+.p_mensagem {
+    
+    font-size: 25px;
+    font-family: ModernWarfare2;
+    color: #b8a12f;
+    
+}
+
+.botao_cadastro {
+    
+    font-family: ModernWarfare;
+    width: 230px;
+    height: 50px;
+    border: solid black;
+    border-radius: 9px;
+    background-color: #b8a12f8f;
+    cursor: pointer;
+    font-size: 20px;
+    
+}
+
+.botao_cadastro:hover {
+    
+    background-color: #b8a12f;
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 30px;
+    font-size: 20px;
+}
+
+/* FIM NAV BAR  */
+
+.container_armas {
+    
+    display: flex;
+    width: 83%;
+    height: 600px;
+    /* background-color: #b8a12f80; */
+    margin-top: 100px;
+    margin-left:150px;
+    margin-right:150px;
+    position: absolute;
+    column-gap: 70px;
+    
+}
+
+.card_operadores {
+    
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 100%;
+    background-color: #9ad73165;
+    border-radius: 10px;
+    
+    
+}
+
+.card_operadores:hover{
+    border: #9ad731 solid;
+    box-shadow: 5px 5px 5px #9ad731  ;
+}
+.operador_1 {
+    
+    background-image: url(../assets/Captura\ de\ tela\ 2023-11-27\ 170003.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 450px;
+    background-position: left;
+    left: 60px;
+    
+    
+}
+
+.operador_2 {
+    
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 184258.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 450px;
+    background-position: center;
+    
+}
+
+.operador_3 {
+    
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 184229.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 100%;
+    background-position: center;
+    
+    
+    
+}

@@ -43,12 +43,15 @@ header {
     flex-direction: row;
     list-style: none;
     margin-left: 885px;
+    height: 100%;
 
 }
 
 .li_nav {
 
+    width: 100%;
     cursor: pointer;
+    height: 100%;
 
 }
 
@@ -61,9 +64,10 @@ nav {
 
 }
 
-nav li a:hover {
+nav a:hover {
 
-    background-color: #b8a12fcc;
+    width: 100%;
+    background-color: #9ad731;
     color: black;
 
 }
@@ -219,4 +223,37 @@ main {
 
 
 /* FIM ANIMACAO  */
+
+
+/* .alerta_erro {
+
+    display: flex;
+    justify-content: flex-end;
+    width: 400px;
+    height: 400px;
+    margin-top: 0px;
+    margin-top: -700;
+    position: absolute;
+    
+  } */
+
+  .card_erro {
+    display: none;
+    background-color: #75c42181;
+    color: #000000;
+
+    padding: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-color: black;
+    text-align: center;
+    margin-left: 1150px;
+    margin-top: -400px;
+    position: absolute;
+  }
+  
+  .card_erro{
+    text-align: center;
+    color: black;
+  }
 

@@ -11,7 +11,7 @@
     <title>Home</title>
 </head>
 
-<body>
+<body onclick="">
 
 
     <header>
@@ -59,7 +59,7 @@
 
         </div>
 
-        </div>
+        
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
@@ -80,7 +80,7 @@
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
+           cardErro.style.display = "block"
             mensagem_erro.innerHTML = " Campos em branco ! ";
             return false;
         }
@@ -140,7 +140,7 @@
     }
 
     function sumirMensagem() {
-        cardErro.style.display = "none"
+       cardErro.style.display = "none"
     }
 
     function cadastrar() {

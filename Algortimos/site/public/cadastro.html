@@ -17,11 +17,11 @@
 
 
   <header>
-    <h1><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
+    <h1 onclick="home()"><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
     <nav>
       <ul class="ul_navbar">
         <li>
-          <a onclick="home()" class="li_nav">Perfil</a>
+          <a onclick="home()" class="li_nav">Home</a>
         </li>
       </ul>
     </nav>
@@ -41,6 +41,10 @@
             <div class="campo">
               <span>Nome:</span>
               <input id="nome_input" type="text" />
+            </div>
+            <div class="campo">
+              <span>NickName:</span>
+              <input id="nick_input" type="text" />
             </div>
             <div class="campo">
               <span>E-mail:</span>
@@ -67,7 +71,8 @@
         </div>
       </div>
 
-
+<div id="div_aguardar"></div>
+<div id="div_mensagem"></div>
 
 
   </main>
@@ -103,7 +108,7 @@
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        " Todos os campos em branco ! ";
+        "Campos em branco ! ";
 
       finalizarAguardar();
       return false;
@@ -113,18 +118,18 @@
 
     // validacao EMAIL
 
-    if (!(email.indexOf("@") >= 1)) {
+    if (!(emailVar.indexOf("@") >= 1)) {
       div_mensagem.style.display = "block";
-      mensagem_erro.innerHTML += `-Deve conter @ no email<br>`;
+      mensagem_erro.innerHTML += `Deve conter @ no email<br>`;
       validacao = 1
     }
-    if (!(email.indexOf(".com") >= 1)) {
-      mensagem_erro.innerHTML += `-Deve conter .com no email <br>`;
+    if (!(emailVar.indexOf(".com") >= 1)) {
+      mensagem_erro.innerHTML += `Deve conter .com no email <br>`;
       div_mensagem.style.display = "block";
       validacao = 1
     }
-    if (email.indexOf(" ") >= 0) {
-      mensagem_erro.innerHTML += `-Não pode conter espaços na email <br>`;
+    if (emailVar.indexOf(" ") >= 0) {
+      mensagem_erro.innerHTML += `Não pode conter espaços na email <br>`;
       div_mensagem.style.display = "block";
       validacao = 1
     }
@@ -139,28 +144,28 @@
       validacao = 1
     }
 
-    if (Senha.length < 8) {
+    if (senhaVar.length < 8) {
       mensagem_erro.innerHTML += `-A senha deve possuir no mínimo 8 caracteres <br>`;
       div_mensagem.style.display = "block";
       validacao = 1
     }
 
-    if (Senha.indexOf(" ") >= 0) {
+    if (senhaVar.indexOf(" ") >= 0) {
       mensagem_erro.innerHTML += `-Não pode conter espaços na senha <br>`;
       div_mensagem.style.display = "block";
       validacao = 1
     }
 
     if (
-      !(Senha.indexOf("#") >= 1 ||
-        Senha.indexOf("@") >= 1 ||
-        Senha.indexOf("!") >= 1 ||
-        Senha.indexOf("%") >= 1 ||
-        Senha.indexOf("*") >= 1 ||
-        Senha.indexOf("$") >= 1 ||
-        Senha.indexOf("_") >= 1 ||
-        Senha.indexOf("-") >= 1 ||
-        Senha.indexOf("&") >= 1)
+      !(senhaVar.indexOf("#") >= 1 ||
+        senhaVar.indexOf("@") >= 1 ||
+        senhaVar.indexOf("!") >= 1 ||
+        senhaVar.indexOf("%") >= 1 ||
+        senhaVar.indexOf("*") >= 1 ||
+        senhaVar.indexOf("$") >= 1 ||
+        senhaVar.indexOf("_") >= 1 ||
+        senhaVar.indexOf("-") >= 1 ||
+        senhaVar.indexOf("&") >= 1)
     ) {
       mensagem_erro.innerHTML += `-A senha deve possuir no mínimo 1 caracter especial <br>`;
       div_mensagem.style.display = "block";
@@ -191,7 +196,7 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "index.html";
           }, "2000");
 
           limparFormulario();
