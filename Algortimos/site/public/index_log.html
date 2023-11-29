@@ -14,12 +14,13 @@
 <body>
 
     <header>
-        <h1 onclick="home()"><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
+        <h1 onclick="home()"><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt=""
+                width=" 150px"></h1>
         <nav>
             <ul class="ul_navbar">
 
                 <li>
-                    <a onclick="jogar()" class="li_nav">Quiz</a>
+                    <a onclick="loadout()" class="li_nav">loadout</a>
                 </li>
 
 
@@ -43,7 +44,7 @@
 
             <div class="div_pesquisa" id="DivPesquisa">
 
-                <span class="spam_pesquisa" spam_pesquisa> Em que podemos melhorar  </span>
+                <span class="spam_pesquisa" spam_pesquisa> Em que podemos melhorar </span>
 
                 <br><BR></BR>
 
@@ -51,16 +52,17 @@
 
                 <br>
 
-                <textarea name="" id="input_sugestao" cols="30" rows="10" class="input_pesquisa" placeholder="Sua opinião é crucial para nós, e cada sugestão contribui para tornar o nosso site mais adaptado às suas necessidades e expectativas."></textarea>
+                <textarea name="" id="input_sugestao" cols="30" rows="10" class="input_pesquisa"
+                    placeholder="Sua opinião é crucial para nós, e cada sugestão contribui para tornar o nosso site mais adaptado às suas necessidades e expectativas."></textarea>
 
                 <br><br>
 
                 <div class="container_button">
 
-                <button onclick="SairPesquisa()" class="button_sair">Sair</button>
-                <button onclick="EnviarPesquisa()" class="button_sair">Enviar</button>
+                    <button onclick="SairPesquisa()" class="button_sair">Sair</button>
+                    <button onclick="EnviarPesquisa()" class="button_sair">Enviar</button>
 
-            </div>
+                </div>
 
             </div>
         </div>
@@ -69,9 +71,11 @@
 
             <spam class="p_welcome_logada">Olá <span id="nome_user"></span> !</spam>
 
-            <p class="p_welcome_exp">Explore nossa página para visualizar as minhas armas e operadores preferidos de Call of
-                Duty Warzone. Utilize nossa pesquisa e compartilhe uma sugestão de melhora para nosso blog ! . Sua
-                escolha define seu caminho em Verdansk Bom combate !</p>
+            <p class="p_welcome_exp">Explore nossa página ! escolha seu operadores e sorteie sua arma de
+                Call of
+                Duty Warzone. Utilize nossa pesquisa e compartilhe uma sugestão de melhora para nosso blog ! . E
+                lembre-se Sua
+                escolha define seu caminho em Verdansk , Bom combate !</p>
         </div>
 
         <div class="container_cards" id="div_cards">
@@ -107,21 +111,55 @@
         div_mensagem.style.display = "none"
 
     }
-    
-    function EnviarPesquisa () {
+
+    function EnviarPesquisa() {
 
         var nome = input_nome.value
         var sugestao = input_sugestao.value
 
-        if( nome == '' && sugestao =='' ){
+        if (nome == '' && sugestao == '') {
 
             alert("Campos vazios")
 
             SairPesquisa()
 
-        }else {
+        } else {
 
-            
+            var idUsuario = sessionStorage.ID_USUARIO;
+
+            var corpo = {
+                nome: input_nome.value,
+                sugestao: input_sugestao.value
+            }
+
+            fetch(`/avisos/publicar/${idUsuario}`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(corpo)
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                    window.location = "index_log.html";
+                    // limparFormulario();
+                    // finalizarAguardar();
+                } else if (resposta.status == 404) {
+                    window.alert("Deu 404!");
+                } else {
+                    throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
+            return false;
+
+
 
         }
 
@@ -150,6 +188,13 @@
     function jogar() {
 
         window.location = "sobre.html"
+
+    }
+
+
+    function loadout() {
+
+        window.location = "loadout.html"
 
     }
 

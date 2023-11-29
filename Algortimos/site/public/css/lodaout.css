@@ -12,7 +12,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../assets/modern-warfare-2_kdmj.jpg');
+    background-image: url('../assets/cropped-1920-1080-1325503.jpg  ');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
@@ -35,12 +35,11 @@ header {
 
 }
 
-header h1{
+header h1 {
 
     cursor: pointer;
-  
-  }
-  
+
+}
 
 
 .ul_navbar {
@@ -71,39 +70,38 @@ nav li a:hover {
 
     background-color: #9ad731;
     color: black;
-    
-    
+
 }
 
 .p_welcome {
-    
+
     color: #ffffff;
     font-size: 30px;
     top: 10;
     margin-left: 20px;
-    
+
 }
 
 .card_welcome {
-    
+
     width: 580px;
     height: 600px;
     background-color: #b8a12f00;
     line-height: 40px;
     text-align: center;
-    
+
 }
 
 .p_mensagem {
-    
+
     font-size: 25px;
     font-family: ModernWarfare2;
     color: #b8a12f;
-    
+
 }
 
 .botao_cadastro {
-    
+
     font-family: ModernWarfare;
     width: 230px;
     height: 50px;
@@ -112,13 +110,13 @@ nav li a:hover {
     background-color: #b8a12f8f;
     cursor: pointer;
     font-size: 20px;
-    
+
 }
 
 .botao_cadastro:hover {
-    
+
     background-color: #b8a12f;
-    
+
 }
 
 nav a {
@@ -128,71 +126,119 @@ nav a {
     font-size: 20px;
 }
 
-/* FIM NAV BAR  */
+/* FIM BARRA DE NAVAGAÇAO  */
 
-.container_armas {
-    
+main {
+
+    padding: 80px 20px 0px;
+    width: 97.3%;
+    height: 700px;
+    background-color: #000000b8;
     display: flex;
-    width: 83%;
-    height: 600px;
-    /* background-color: #b8a12f80; */
-    margin-top: 100px;
-    margin-left:150px;
-    margin-right:150px;
+
+
+}
+
+.div_loadout {
+
+    background-color: #9ad73100;
+    width: 65%;
+    height: 95%;
+    margin-top: 30px;
+
+
+}
+
+.div_descricao {
+
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    align-items:normal;
+    height: 200px;
+    background-color: #2e7784;
     position: absolute;
-    column-gap: 70px;
-    
-}
-
-.card_operadores {
-    
-    display: flex;
-    flex-direction: row;
-    width: 40%;
-    height: 100%;
-    background-color: #9ad73165;
+    margin-left: 400px;
+    margin-top: 50px;
     border-radius: 10px;
+
+}
+
+.span_loadout {
+
+    font-size: 25px;
+    padding: 20px;
+    padding-top: 10px;
+    color: rgb(0, 0, 0);
+
+}
+
+.span_status {
+
+    padding: 10px;
+    font-size: 20px;
+
     
     
 }
 
-.card_operadores:hover{
-    border: #9ad731 solid;
-    box-shadow: 5px 5px 5px #9ad731  ;
-}
-.operador_1 {
+.sp1 {
     
-    background-image: url(../assets/Captura\ de\ tela\ 2023-11-27\ 170003.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 450px;
-    background-position: left;
-    left: 60px;
-    
-    
+    font-size: bold;
+    font-size: 12px;
+    font-size: 25px;
+    font-family: ModernWarfare2;
+
+
 }
 
-.operador_2 {
-    
-    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 184258.png);
+.div_operador {
+
+    background-color: #00000000;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
-    width: 450px;
-    background-position: center;
-    
+    height: 550px;
+    width: 350px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+
 }
 
-.operador_3 {
-    
-    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 184229.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 450px;
-    height: 100%;
-    background-position: center;
-    
-    
-    
+.div_arma {
+
+    width: 530px;
+    height: 300px;
+    margin-left: 400px;
+    margin-top: -300px;
+    position: absolute;
+    border-radius: 10px;
+    background-size: contain;
+
+}
+
+.div_grafico {
+
+    background-color: #b8a12f46;
+    width: 35%;
+    height: 80%;
+    margin-top: 70px;
+    margin-left: 10px;
+    border-radius: 10px;
+
+
+}
+.graf-conteudo {
+    display: flex;
+    /* height: 100%; */
+    width: 70%;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: 80px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.cnvs {
+    width: 100%;
 }

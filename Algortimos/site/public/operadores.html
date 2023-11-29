@@ -32,9 +32,9 @@
         <div class="container_armas">
 
 
-            <div class="operador_1 card_operadores "></div>
-            <div class="operador_2 card_operadores "></div>
-            <div class="operador_3 card_operadores "></div>
+            <div class="operador_1 card_operadores " onclick="operador_1()"></div>
+            <div class="operador_2 card_operadores " onclick="operador_2()"></div>
+            <div class="operador_3 card_operadores " onclick="operador_3()"></div>
 
 
         </div>
@@ -51,6 +51,26 @@
 function home(){
 
     window.location = "index_log.html"
+
+}
+
+function operador_1(){
+
+    localStorage.setItem("Operador" , 1)
+
+    home()
+
+}
+function operador_2(){
+
+    localStorage.setItem("Operador" , 2)
+
+    home()
+}
+function operador_3(){
+
+    localStorage.setItem("Operador" , 3)
+    home()
 
 }
 

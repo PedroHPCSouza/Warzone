@@ -156,13 +156,13 @@ nav a {
 
 }
 
-.card_armas:hover {
+/* .card_armas:hover {
 
     border: 10px;
     border: #9ad731 solid;
     box-shadow: 5px 5px 5px #9ad731;
 
-}
+} */
 
 
 .div_up {
@@ -219,7 +219,7 @@ nav a {
 
 .arma_4 {
 
-    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-27\ 183327.png);
+    background-image: url(../assets/armas/Captura\ de\ tela\ 2023-11-28\ 024928.png);
     background-size: contain;
     background-repeat: no-repeat;
 
@@ -261,6 +261,7 @@ nav a {
     width: 20%;
     margin-top: 20px;
     font-family: ModernWarfare;
+    font-size: 17px;
 }
 
 .button_armas:hover {

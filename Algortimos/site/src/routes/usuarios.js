@@ -16,4 +16,13 @@ router.post("/sugestao", function (req, res) {
     usuarioController.sugestao(req, res);
 });
 
+router.post("/cadastrarNick", function (req, res) {
+    usuarioController.cadastrarNick(req, res);
+});
+
+
+router.post("/cadastrarNickName", function (req, res) {
+    usuarioController.cadastrarNickName(req, res);
+});
+
 module.exports = router;

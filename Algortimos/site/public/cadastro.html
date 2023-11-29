@@ -17,7 +17,8 @@
 
 
   <header>
-    <h1 onclick="home()"><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px"></h1>
+    <h1 onclick="home()"><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt="" width=" 150px">
+    </h1>
     <nav>
       <ul class="ul_navbar">
         <li>
@@ -71,8 +72,8 @@
         </div>
       </div>
 
-<div id="div_aguardar"></div>
-<div id="div_mensagem"></div>
+      <div id="div_aguardar"></div>
+      <div id="div_mensagem"></div>
 
 
   </main>
@@ -84,7 +85,7 @@
 
 <script>
 
-  function home(){
+  function home() {
 
     window.location = "index.html"
   }
@@ -93,6 +94,7 @@
     aguardar();
 
     var nomeVar = nome_input.value;
+    var nickVar = nick_input.value
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
@@ -103,6 +105,7 @@
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
+      nickVar == '' ||
       confirmacaoSenhaVar == ""
 
     ) {
@@ -170,7 +173,10 @@
       mensagem_erro.innerHTML += `-A senha deve possuir no mínimo 1 caracter especial <br>`;
       div_mensagem.style.display = "block";
       validacao = 1
+
     }
+
+    var id = 0;
 
     // FIM VALIDACAO SENHA
 
@@ -183,6 +189,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
+        nicknameServer: nickVar
 
       }),
     })
@@ -195,12 +202,11 @@
           mensagem_erro.innerHTML =
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
+
           setTimeout(() => {
             window.location = "index.html";
           }, "2000");
 
-          limparFormulario();
-          finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
@@ -210,8 +216,135 @@
         finalizarAguardar();
       });
 
+
+
+
+
+
+
+
+
+
+
+    //     fetch("/usuarios/cadastrarNick", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+
+    //         emailServer:emailVar
+    //       }),
+    //     })
+    //       .then(function (resposta) {
+    //         console.log("resposta: ", resposta);
+
+    //         if (resposta.ok) {
+    //           cardErro.style.display = "block";
+
+    //            id = json.idcadastro;
+
+    //           mensagem_erro.innerHTML =
+    //             "Cadastro realizado com sucesso! Redirecionando para tela de Login..."
+
+    //         } else {
+    //           throw "Houve um erro ao tentar realizar o cadastro!";
+    //         }
+    //       })
+    //       .catch(function (resposta) {
+    //         console.log(`#ERRO: ${resposta}`);
+
+    //       });console.log(id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // //
+
+
+
+    // fetch("/usuarios/cadatrarNickName", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+
+    //         idServer : id,
+    //         nicknameServer : nickVar
+
+    //       }),
+    //     })
+    //       .then(function (resposta) {
+    //         console.log("resposta: ", resposta);
+
+    //         if (resposta.ok) {
+    //           cardErro.style.display = "block";
+
+    //           mensagem_erro.innerHTML =
+    //             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+    //           setTimeout(() => {
+    //             window.location = "index.html";
+    //           }, "2000");
+
+    //           limparFormulario();
+    //           finalizarAguardar();
+    //         } else {
+    //           throw "Houve um erro ao tentar realizar o cadastro!";
+    //         }
+    //       })
+    //       .catch(function (resposta) {
+    //         console.log(`#ERRO: ${resposta}`);
+    //         finalizarAguardar();
+    //       });
     return false;
+
+
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   function sumirMensagem() {
     cardErro.style.display = "none";

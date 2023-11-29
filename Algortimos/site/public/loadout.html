@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/lodaout.css">
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" type="imagex/png"
+        href="../public/assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png">
+
+    <title>Loadout</title>
+</head>
+
+<body onload="exibir()">
+
+    <header>
+        <h1 onclick="home()"><img src="./assets/modern-warfare-2_kdmj-PhotoRoom.png-PhotoRoom.png" alt=""
+                width=" 150px"></h1>
+        <nav>
+            <ul class="ul_navbar">
+
+                <li>
+                    <a onclick="home()" class="li_nav">Home</a>
+                </li>
+
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="div_loadout" id="loadout">
+
+            <div class="div_descricao">
+
+                <span class="span_loadout">Seu Loadout</span>
+                <span class="span_status">Operador <span class="span_operador sp1" id="spanOps"></span></span>
+                <span class="span_status">Arma <span class="span_arma sp1" id="spanArma"></span></span>
+                <span class="span_status">Status <span class="span_status sp1" id="spanStat"></span></span>
+
+            </div>
+
+            <div class="div_operador" id="divOperador"></div>
+
+            <div id="DivArmas"></div>
+
+
+
+
+            <!-- '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183047.png">',
+            '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183007.png">',
+            '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183117.png">',
+            '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-28 024928.png">',
+            '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183715.png">',
+            '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183859.png">' -->
+
+
+
+        </div>
+        <div class="div_grafico">
+
+            <span class="span_loadout">Probalidades</span>
+
+            <div class="graf-conteudo doughnut">
+                <canvas id="myChart3" class="cnvs"></canvas>
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </main>
+
+
+
+</body>
+
+</html>
+
+<!-- <script src="./js/sorteio.js"></script> -->
+
+<script>
+
+
+    var ListaArmas = ['<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183047.png">',
+        '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183007.png">',
+        '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183117.png">',
+        '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-28 024928.png">',
+        '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183715.png">',
+        '<img class="div_arma" id="divArma" src="./assets/armas/Captura de tela 2023-11-27 183859.png">']
+
+    var ListaOperadores = ['<img class="div_operador" id=divOperador src="./assets/armas/Captura de tela 2023-11-27 184355.png">',
+        '<img class="div_operador" id=divOperador src="./assets/armas/Captura de tela 2023-11-27 184258.png">',
+        '<img class="div_operador" id=divOperador src="./assets/armas/Captura de tela 2023-11-27 184229.png">']
+
+
+    function exibir() {
+
+        var ops = Number(localStorage.getItem("Operador"))
+
+        var armaSort = Number(localStorage.getItem("ArmaSorteada"))
+
+        var arma_sorteada = Number(localStorage.getItem("ArmaSorteada"))
+
+        DivArmas.innerHTML = ListaArmas[localStorage.getItem("ArmaSorteada") - 1]
+
+        var arma_sorteada = Number(localStorage.getItem("Operador"))
+
+        divOperador.innerHTML = ListaOperadores[localStorage.getItem("Operador") - 1]
+
+
+        if (armaSort == 1) {
+
+            spanArma.innerHTML = ': <span style="color: #f2af6a;">Quijinho</span>'
+
+            spanStat.innerHTML = ': <span style="color: #ff01fd;">Rara</span>'
+        }
+        else if (armaSort == 2) {
+
+            spanArma.innerHTML = ': <span style="color: #7ed4cc;">Revolucionária</span>'
+
+            spanStat.innerHTML = ': <span style="color: #ff6600;">Super Épica</span> '
+
+        }
+        else if (armaSort == 3) {
+
+            spanArma.innerHTML = ': Bravo 7-1'
+
+            spanStat.innerHTML = ': <span style="color: #2b97fa;">Comum</span>'
+
+
+        }
+        else if (armaSort == 4) {
+
+            spanArma.innerHTML = ': Ghost'
+
+            spanStat.innerHTML = ': <span style="color: #2b97fa;">Comum</span>'
+
+
+        }
+        else if (armaSort == 5) {
+
+            spanArma.innerHTML = ': Sem Trégua'
+
+            spanStat.innerHTML = ': <span style="color: #ff01fd;">Rara</span>'
+
+
+        }
+        else if (armaSort == 6) {
+
+            spanArma.innerHTML = ': El Dorado'
+
+            spanStat.innerHTML = ': <span style="color: #39ff14;">Épica</span>'
+
+        }
+
+
+        if (ops == 1) {
+
+            spanOps.innerHTML = ': Ratão'
+
+
+        }
+
+        else if (ops == 2) {
+
+            spanOps.innerHTML = ': Ghost'
+
+        }
+
+        else if (ops == 3) {
+
+            spanOps.innerHTML = ': Mantícora'
+
+        }
+
+
+
+
+    }
+
+    function home() {
+
+        window.location = "index_log.html"
+    }
+
+    var probabilidade = [];
+
+    const ctx3 = document.getElementById('myChart3');
+
+Chart.defaults.font.size = 16;
+new Chart(ctx3, {
+    type: 'doughnut',
+    data: {
+        labels: ['Comum', 'Rara','Épica','Super Épica' ],
+        datasets: [{
+            label: [],
+            data : [ 60, 15, 10, 5 ],
+            backgroundColor: [
+                '#2b97fa',
+                '#ff01fd',
+                '#08f808',
+                '#ff6600'
+            ]
+
+        }]
+    },
+});
+
+
+</script>
